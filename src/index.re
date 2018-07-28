@@ -3,9 +3,6 @@
 [@bs.module "./registerServiceWorker"]
 external registerServiceWorker : unit => unit = "default";
 
-ReactDOMRe.renderToElementWithId(
-  <App message="Welcome to React and Reason" />,
-  "root",
-);
+ReactDOMRe.renderToElementWithId(<App />, "root");
 
 registerServiceWorker();
