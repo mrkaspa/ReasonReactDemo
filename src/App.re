@@ -23,14 +23,17 @@ let make = _children => {
     | Dec => RR.Update({n: state.n - 1})
     },
   render: self =>
-    <div className="App">
-      <button onClick=(_event => self.send(Inc))> (RR.string("+")) </button>
-      (self.state.n |> string_of_int |> RR.string)
-      <button onClick=(_event => self.send(Dec))> (RR.string("-")) </button>
-      <br />
-      <button onClick=(_event => self.send(Reset))>
-        (RR.string("reset"))
-      </button>
-      <MapIndex />
-    </div>,
+    RR.(
+      <div className="App">
+        <h1> (string("Hello")) </h1>
+        <button onClick=(_event => self.send(Inc))> (string("+")) </button>
+        (self.state.n |> string_of_int |> string)
+        <button onClick=(_event => self.send(Dec))> (string("-")) </button>
+        <br />
+        <button onClick=(_event => self.send(Reset))>
+          (string("reset"))
+        </button>
+        <MapIndex />
+      </div>
+    ),
 };
